@@ -19,8 +19,8 @@ int equalityTest(const T1    testValue,
 
 
 int main(
-    int    argc,
-    char** argv
+    int,
+    char**
 )
 {
     int result = 0;
