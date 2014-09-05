@@ -10,8 +10,6 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" OR
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
     set(warnings "/W4 /WX /EHsc")
 endif()
-set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS} ${warnings}")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${warnings}")
 
 if (NOT CONFIGURED_ONCE)
 	set(CMAKE_CXX_FLAGS "${warnings}"
@@ -20,6 +18,14 @@ if (NOT CONFIGURED_ONCE)
 	CACHE STRING "Flags used by the compiler during all build types." FORCE)
 endif()
 
-add_executable(toDo main.cc ToDo.cc)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+
+add_subdirectory(ToDoCore)
+
+add_executable(toDo main.cc)
+target_link_libraries(toDo toDoCore)
+
 add_test(toDoTest toDo)
 
+set(CONFIGURED_ONCE TRUE CACHE INTERNAL
+"A flag showing that CMake has configured at least once.")
