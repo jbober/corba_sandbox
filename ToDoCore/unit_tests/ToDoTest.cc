@@ -1,4 +1,4 @@
-#include "ToDoCore/ToDo.h"
+#include "ToDo.h"
 
 #include <string>
   using std::string;

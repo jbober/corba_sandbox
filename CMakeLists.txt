@@ -19,6 +19,7 @@ if (NOT CONFIGURED_ONCE)
 endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+#include_directories(ToDoCore)
 
 add_subdirectory(ToDoCore)
 

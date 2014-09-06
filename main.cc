@@ -3,7 +3,8 @@
   using std::cout;
   using std::endl;
 
-#include "ToDo.h"
+#include "ToDoCore/ToDo.h"
+  using ToDoCore::ToDo;
 
 #define EXPECT_EQUAL(test, expect) equalityTest( test,  expect, \
                                                 #test, #expect, \
@@ -31,7 +32,7 @@ int main(
     list.addTask("compile");
     list.addTask("test");
 
-    result |= EXPECT_EQUAL(list.size(),     3);
+    result |= EXPECT_EQUAL(list.size(),     size_t(3));
     result |= EXPECT_EQUAL(list.getTask(0), "write code");
     result |= EXPECT_EQUAL(list.getTask(1), "compile");
     result |= EXPECT_EQUAL(list.getTask(2), "test");
