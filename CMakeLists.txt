@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 2.6)
 project (corba_sandbox)
 enable_testing()
 
-#add_subdirectory (gmock)
+#add_subdirectory (gmock-1.7.0)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" OR
 	"${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")

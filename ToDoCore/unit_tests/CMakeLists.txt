@@ -1,4 +1,4 @@
-set(GMOCK_DIR "../../gmock"
+set(GMOCK_DIR "../../gmock-1.7.0"
 	CACHE PATH "The path to the GoogleMock test framework.")
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
@@ -8,7 +8,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
 		"Use shared (DLL) run-time lib even when Google Test is built as static lib."
 		ON)
 endif()
-add_subdirectory(${GMOCK_DIR} ${CMAKE_BINARY_DIR}/gmock)
+add_subdirectory(${GMOCK_DIR} ${CMAKE_BINARY_DIR}/gmock-1.7.0)
 set_property(TARGET gtest APPEND_STRING PROPERTY COMPILE_FLAGS " -w")
 
 include_directories(SYSTEM ${GMOCK_DIR}/gtest/include 

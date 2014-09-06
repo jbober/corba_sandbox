@@ -1,0 +1,9 @@
+This is the directory for all the project files and binaries.
+Those automatically generated files are ignored from repository in .gitignore file
+
+generate makefiles:
+cmake ..
+
+If you want an Eclipse project, you should create a sibling directory to this project and do:
+
+cmake -G "Eclipse CDT4 - Unix Makefiles" ../corba_sandbox
