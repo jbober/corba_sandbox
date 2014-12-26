@@ -26,27 +26,3 @@
  **/
 
 
-// TAO_IDL - Generated from
-// be/be_visitor_interface/interface_ci.cpp:68
-
-ACE_INLINE
-Time::Time (
-    TAO_Stub *objref,
-    ::CORBA::Boolean _tao_collocated,
-    TAO_Abstract_ServantBase *servant,
-    TAO_ORB_Core *oc)
-  : ::CORBA::Object (objref, _tao_collocated, servant, oc),
-    the_TAO_Time_Proxy_Broker_ (0)
-{
-  this->Time_setup_collocation ();
-}
-
-ACE_INLINE
-Time::Time (
-    ::IOP::IOR *ior,
-    TAO_ORB_Core *oc)
-  : ::CORBA::Object (ior, oc)
-    , the_TAO_Time_Proxy_Broker_ (0)
-{
-}
-
