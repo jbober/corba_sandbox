@@ -9,3 +9,5 @@ apt-get install libtao
 export ACE_ROOT=/usr/lib/ace
 export TAO_ROOT=${ACE_ROOT}/TAO
 
+corba_simplistic example taken from: 
+https://github.com/egustafson/sandbox/tree/master/C_CPP/TAO_time
