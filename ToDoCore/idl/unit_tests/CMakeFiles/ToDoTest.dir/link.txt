@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/ToDoTest.dir/ToDoTest.o  -o ToDoTest -rdynamic -L/home/jerronimo/workspace/corba_sandbox/ToDoCore/idl/gmock-1.7.0 -L/home/jerronimo/workspace/corba_sandbox/ToDoCore/idl ../gmock-1.7.0/libgmock_main.a ../libtoDoCore.a -lpthread 
