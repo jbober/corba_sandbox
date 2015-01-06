@@ -3,12 +3,12 @@ IDL= tao_idl
 IDLFLAGS= -hc "C.hh" -hs "S.hh" -hT "S_T.hh" -cs "C.cc" -ss "S.cc" -sT "S_T.cc"
 CC= g++
 CCFLAGS=-I$(ACE_ROOT) -I$(TAO_ROOT)
-LDFLAGS= -lACE -lTAO -lTAO_PortableServer -lpthread
+LDFLAGS=-L$(ACE_ROOT)/ace -lACE -lTAO -lTAO_PortableServer
 ## ------------------------------------------------------------
 all : client servant
 ## -----
-timeC.hh :	time.idl
-	$(IDL)	$(IDLFLAGS) time.idl
+timeC.hh : time.idl
+	$(IDL) $(IDLFLAGS) time.idl
 timeC.o : timeC.cc timeC.hh
 	$(CC) $(CCFLAGS) -c timeC.cc
 timeS.o : timeS.cc timeS.hh timeC.hh
