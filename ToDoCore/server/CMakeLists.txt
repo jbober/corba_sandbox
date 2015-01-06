@@ -1,4 +1,6 @@
-
-add_executable(server main.cpp)
+cmake_minimum_required(VERSION 2.8)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../idl)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../idl/build/)
+add_executable(server main.cpp)
+target_link_libraries(server idl ${TAO_LIBRARIES} ${ACE_LIBRARIES})
+#target_link_libraries (server LINK_PUBLIC IDL)

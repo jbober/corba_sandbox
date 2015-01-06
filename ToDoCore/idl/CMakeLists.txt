@@ -1,4 +1,5 @@
 cmake_minimum_required (VERSION 2.8)
+project(IDL)
 #set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 #set(TAO_IDL /usr/bin/tao_idl)
 #FOREACH ( SUFFIX ${IDL_SUFFIXES} )
@@ -45,6 +46,8 @@ cmake_minimum_required (VERSION 2.8)
 #find_library("TAO")
 #FIND_PACKAGE(TAO REQUIRED)
 #FIND_PACKAGE(ACE REQUIRED)
+set(${IDL}_INCLUDE_DIRS ${IDL_BINARY_DIR}
+	CACHE INTERNAL "${IDL}: Include Directories" FORCE)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}
 	#${ACE_INCLUDE_DIR}
 	#${TAO_INCLUDE_DIR}
@@ -59,10 +62,11 @@ ADD_CUSTOM_COMMAND(
 	ARGS ${CMAKE_CURRENT_SOURCE_DIR}/time.idl
 	DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/time.idl
 	)
-ADD_LIBRARY(idl timeC.cpp timeS.cpp
+ADD_LIBRARY(idl timeC.cpp timeS.cpp)
+#target_include_directories (IDL PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
 	#${TAO_LIBRARARIES}
 	#${ACE_LIBRARIES}
 	#${TAO_PortableServer_LIB}
 	#${TAO_CosEvent_Skel_LIB}
 	#${TAO_CosNaming_LIB}
-	)
+	#)
