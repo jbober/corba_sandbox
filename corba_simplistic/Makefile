@@ -3,7 +3,11 @@ IDL= tao_idl
 IDLFLAGS= -hc "C.hh" -hs "S.hh" -hT "S_T.hh" -cs "C.cc" -ss "S.cc" -sT "S_T.cc"
 CC= g++
 CCFLAGS=-I$(ACE_ROOT) -I$(TAO_ROOT)
-LDFLAGS=-L$(ACE_ROOT)/ace -lACE -lTAO -lTAO_PortableServer
+LDFLAGS=-L$(ACE_ROOT)/ace -lACE -lTAO -lTAO_PortableServer -lTAO_AnyTypeCode
+
+#set(TAO_FIND_LIBS "DynamicInterface" "PortableServer" "DynamicAny" "ACE" "TA    O" "AnyTypeCode" "CosNaming" "CosEvent" "CosEvent_Skel" )
+
+
 ## ------------------------------------------------------------
 all : client servant
 ## -----
