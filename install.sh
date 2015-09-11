@@ -36,6 +36,8 @@ echo "export ACE_ROOT=$PWD" >> ~/.bashrc
 source ~/.bashrc 
 echo 'export TAO_ROOT=$ACE_ROOT/TAO' >> ~/.bashrc 
 echo 'export LD_LIBRARY_PATH=$ACE_ROOT/lib:$LD_LIBRARY_PATH' >> ~/.bashrc 
+echo 'export PATH=$ACE_ROOT/bin:$PATH' >> ~/.bashrc
+
 source ~/.bashrc 
 cd $ACE_ROOT; 
 # create config.h file 
